@@ -20,33 +20,35 @@
 	};
 </script>
 
-<div>
-	<progress class="bg-gray-50 shadow-inner" value={step} max="4" />
-</div>
-<div>
-	{#if step === 1}
-		<StepOne {handleSelectMovie} />
-	{:else if step === 2}
-		<StepTwo {movieID} />
-	{:else if step === 3}
-		<StepThree />
-	{:else if step === 4}
-		<StepFour />
-	{/if}
-</div>
-<div>
-	{#if step === 1}
-		<button on:click={handleNext}>Next</button>
-	{:else if step === 2}
-		<button on:click={handleBack}>Back</button>
-		<button on:click={handleNext}>Next</button>
-	{:else if step === 3}
-		<button on:click={handleBack}>Back</button>
-		<button on:click={handleNext}>Next</button>
-	{:else if step === 4}
-		<button on:click={handleBack}>Back</button>
-		<button>Log</button>
-	{/if}
+<div class="">
+	<div>
+		<progress class="bg-gray-50 shadow-inner" value={step} max="4" />
+	</div>
+	<div>
+		{#if step === 1}
+			<StepOne {handleSelectMovie} />
+		{:else if step === 2}
+			<StepTwo {movieID} />
+		{:else if step === 3}
+			<StepThree />
+		{:else if step === 4}
+			<StepFour />
+		{/if}
+	</div>
+	<div>
+		{#if step === 1}
+			<button on:click={handleNext}>Next</button>
+		{:else if step === 2}
+			<button on:click={handleBack}>Back</button>
+			<button on:click={handleNext}>Next</button>
+		{:else if step === 3}
+			<button on:click={handleBack}>Back</button>
+			<button on:click={handleNext}>Next</button>
+		{:else if step === 4}
+			<button on:click={handleBack}>Back</button>
+			<button>Log</button>
+		{/if}
+	</div>
 </div>
 
 <style>
