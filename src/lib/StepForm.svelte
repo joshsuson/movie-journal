@@ -20,9 +20,9 @@
 	};
 </script>
 
-<div class="">
-	<div>
-		<progress class="bg-gray-50 shadow-inner" value={step} max="4" />
+<div>
+	<div class="mx-4 my-12">
+		<progress class="bg-gray-50 shadow-inner rounded-3xl w-full h-6" value={step} max="4" />
 	</div>
 	<div>
 		{#if step === 1}
@@ -54,10 +54,14 @@
 <style>
 	progress[value]::-webkit-progress-bar {
 		@apply bg-gray-50 shadow-inner;
+		border-radius: 25px;
+		width: 100%;
+		height: 25px;
 	}
 
 	progress[value]::-webkit-progress-value {
-		@apply bg-blue-400;
+		@apply bg-gradient-to-r from-green-400 via-blue-500 to-indigo-600;
+		border-radius: 25px;
 	}
 
 	progress[value]::-moz-progress-bar {

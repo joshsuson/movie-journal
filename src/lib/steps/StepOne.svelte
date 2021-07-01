@@ -31,7 +31,7 @@
 		<button>Search</button>
 	</form>
 </div>
-<div>
+<div class="h-96 overflow-scroll bg-gray-700 rounded p-4">
 	{#if !movies && !loading}
 		<h1>Search for a movie</h1>
 	{:else if loading}

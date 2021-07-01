@@ -16,9 +16,6 @@
 <main class="max-w-6xl p-4 mx-auto">
 	<slot />
 </main>
-<footer>
-	<p>© Copyright 2021</p>
-</footer>
 
 <style>
 	:global(body) {
