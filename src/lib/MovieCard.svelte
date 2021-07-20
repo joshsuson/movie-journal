@@ -1,12 +1,20 @@
 <script>
 	export let movie;
 	export let handleSelectMovie;
+	export let selectedMovie;
 	const imgSource = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`;
+
+	const selectThatMovie = movie => {
+		handleSelectMovie(movie)
+	}
+
+	$: borderColor = movie.id === selectedMovie ? "border-indigo-600" : "border-gray-800"
+
 </script>
 
 <div
-	on:click={() => handleSelectMovie(movie)}
-	class="bg-gray-800 grid grid-cols-4 w-3/4 my-3 p-2 rounded mx-auto cursor-pointer border-2 border-gray-800 hover:border-indigo-600"
+	on:click={() => selectThatMovie(movie)}
+	class={`bg-gray-800 grid grid-cols-4 w-3/4 my-3 p-2 rounded mx-auto cursor-pointer border-2 hover:border-indigo-600 ${borderColor}`}
 >
 	<div class="col-span-1">
 		<img class="rounded" src={imgSource} alt={`${movie.title} poster image`} />
